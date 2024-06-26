@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Serach </title>
+</head>
+<body>
+      <label for="search">Search Here</label>
+      <input type="text" id="search">
+      <button>Click</button>
+      <p></p>
+</body>
+<script>
+      let data=['Tom:12345','John:324323','Jame:875849','Austin:745748'];
+
+      let para = document.querySelector('p');
+      let input = document.querySelector('input');
+      let button = document.querySelector('button');
+
+      button.addEventListener('click',function(){
+            for (let i=0; i<data.length ; i++){
+      let searchData = input.value.toLowerCase();
+      let splitData = data[i].split(':');
+      if (splitData[0].toLowerCase() === searchData){
+            para.textContent=splitData[0] + ' number is ' + splitData[1];
+            break;
+      }
+      if(i===data.length-1){
+           para.textContent=searchData + ' is not found!';
+      }
+}
+      })
+
+</script>
+</html>
